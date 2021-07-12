@@ -1,0 +1,84 @@
+/* Problem day 1
+
+Take an array of integers (positive or negative or both) and return the sum of the absolute value of each element.
+
+Examples
+getAbsSum([2, -1, 4, 8, 10]) ➞ 25
+
+getAbsSum([-3, -4, -10, -2, -3]) ➞ 22
+
+getAbsSum([2, 4, 6, 8, 10]) ➞ 30
+
+getAbsSum([-1]) ➞ 1
+Notes
+The term "absolute value" means to remove any negative sign in front of a number, and to think of all numbers as positive (or zero).
+All the elements in the given array are integers.*/
+//Solution 1
+#include<iostream>
+using namespace std;
+
+//Take an array of integers (positive or negative or both) and return the sum of the absolute value of each element.
+int getAbsoluteSum(int arr2[],int p);
+
+
+int main(){
+	int n;
+	cout<<"Enter no of elements:"<<endl;
+	cin>>n;
+	int arr[n];
+	for(int i=0;i<n;i++){
+		cin>>arr[i];
+	}
+	cout<<"Absolute Sum="<<getAbsoluteSum(arr,n);
+	
+}
+
+int getAbsoluteSum(int arr2[],int p){
+      int sum=0;
+	  for(int i=0;i<p;i++){
+	  	if(arr2[i]<0){
+	  		sum=(-arr2[i])+sum;
+		  }
+		  else{
+		  	sum=sum+arr2[i];
+		  }
+	  }	
+	  return sum;
+}
+
+
+
+
+
+//Solution 2
+
+#include<iostream>
+using namespace std;
+
+//Take an array of integers (positive or negative or both) and return the sum of the absolute value of each element.
+int getAbsoluteSum(int arr2[],int p);
+
+
+int main(){
+	int arr[]={1,-2,4,5};
+	int n=sizeof(arr)/sizeof(arr[0]);
+	cout<<getAbsoluteSum(arr,n);
+}
+
+int getAbsoluteSum(int arr2[],int p){
+      int sum=0;
+	  for(int i=0;i<p;i++){
+	  	if(arr2[i]<0){
+	  		sum=(-arr2[i])+sum;
+		  }
+		  else{
+		  	sum=sum+arr2[i];
+		  }
+	  }	
+	  return sum;
+}
+//faced difficulty in passing array to function
+//while using whole array we simply write arr not arr[] or arr[n]
+//while receiving in function we write int arr[]
+
+//ffunc declaration at top should be similar to function declaration near function
