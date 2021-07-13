@@ -1,0 +1,84 @@
+ //Day 2 (Daily Practice)
+---------------------------
+
+
+Question
+---------
+/*Create a function that counts the number of syllables a word has. Each syllable is separated with a dash -.
+
+
+
+Examples
+
+numberSyllables("buf-fet") ? 2
+
+
+
+numberSyllables("beau-ti-ful") ? 3
+
+
+
+numberSyllables("mon-u-men-tal") ? 4
+
+
+
+numberSyllables("on-o-mat-o-poe-ia") ? 6
+
+*/
+----------------------------------------------------------------------------------------------------------
+Solution
+---------
+#include<iostream>
+
+using namespace std;
+
+int numbersyllables(string s1);
+
+int main(){
+
+	cout<<numbersyllables("hi-how-are-you-my-friend");
+
+}
+
+int numbersyllables(string s1){
+
+	int count=0;
+
+	char s2='-';
+
+	for(int i=0;s1[i]!='\0';i++){
+
+		if(s1[i]==s2){
+
+			count++;
+
+		}
+
+	}
+
+return count+1;
+
+}
+---------------------------------------------------------------------------------------------------------
+Learnings
+---------
+//data inside "  " is a string. Inside string we can search using array method
+
+//There is no need of finding the total no. of characters in a string for 'for' loop
+
+//just use 'for(int i=0;s1[i]!='\0';i++)'
+
+//We learnt:
+
+//1.Finding an element(character) in a string.
+
+//2.Using for loop for string element search.
+
+//3.Using if for comparing element of a string with a char.
+
+//4.difference between char and string
+
+//  char is 'c' , while string is "hi how are you".
+
+//5.Passing a string to a function. 
+
