@@ -1,0 +1,119 @@
+ //Day 3 (Daily Problem)
+-------------------------
+Question
+--------
+Travelling Salesman Problem
+
+A salesman has a number of cities to visit. He want to calculate the total number of possible paths he could take, visiting each city once before returning home. Return the total number of possible paths a salesman can travel, given n cities.
+
+
+
+If we have cities A, B and C, possible paths would be:
+
+
+
+A -> B -> C
+
+A -> C -> B
+
+B -> A -> C
+
+B -> C -> A
+
+C -> B -> A
+
+C -> A -> B
+
+... which gives us 6 as the possible number of paths.
+
+
+
+Examples
+
+paths(4) ? 24
+
+
+
+paths(1) ? 1
+
+
+
+paths(9) ? 362880
+
+Notes
+
+Inspired by a video from Dr. Peter Uelkes.
+
+This challenge is describing a factorial.
+
+
+------------------------------------------------------------------------------------------------------------------
+Solution
+---------
+#include<iostream>
+
+using namespace std;
+
+
+
+int paths(int p);
+
+
+
+int main(){
+
+	int n;
+
+	cout<<"Enter the number of CITIES"<<endl;
+
+	cin>>n;
+
+	cout<<"NO. of paths he can take :";
+
+    cout<<paths(n);
+
+}
+
+
+
+int paths(int p)
+
+{
+
+	if(p<=1){
+
+		return 1;
+
+	}
+
+	else
+
+	return p*paths(p-1);
+
+}
+-------------------------------------------------------------------------------------------------------------------------------
+Learnings
+--------------
+1. If we use recursion we need to definitely use base case/end case(i.e case where recursion stops,what will happen)
+
+eg if we write the paths function as
+
+int paths(int p)
+
+   { return p*paths(p-1);}
+
+
+
+Ask yourself when will recursion stop. when p becomes 1 . what will happen after p becomes one is defined by
+
+ base case which is not included here , so the recursion wont work.
+
+
+
+Flow if p=3 
+
+3*2*1*??       after 1 we dont have anything defined .So we need to use base case here
+
+
+
+2. Segmentation fault = fault with memory.
