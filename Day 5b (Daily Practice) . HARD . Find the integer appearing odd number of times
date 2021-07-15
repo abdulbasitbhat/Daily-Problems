@@ -1,0 +1,104 @@
+Day 5b (Daily Practice)               ......This was a HARD question......
+-----------------------------------------------------------------------------------------------------------------
+Question
+----------------
+Find the Odd Integer                                                                (15-07-2021)
+-------------------------
+Create a function that takes an array and finds the integer which appears an odd number of times.
+
+
+
+Examples
+
+findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]) ? -1
+
+
+
+findOdd([20, 1, 1, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5]) ? 5
+
+
+
+findOdd([10]) ? 10
+
+Notes
+
+There will always only be one integer that appears an odd number of times.
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+Solution
+----------
+#include<iostream>
+
+using namespace std;
+
+
+
+int findOdd(int arr[],int n);
+
+int main(){
+
+	int arr2[]={0,0,1,1,2,2,3,4,4};
+
+	int n = sizeof(arr2)/sizeof(arr2[0]);
+
+	cout<<findOdd(arr2,n);
+
+}
+
+int findOdd(int arr[],int n){
+
+
+
+		
+
+	int flag[n];                     
+
+	for(int i=0;i<n;i++){
+
+		for(int j=0;j<n;j++){
+
+			if(arr[i]==arr[j]){
+
+				flag[i]=flag[i]+1;     //flag array stores the no. of same elements
+
+				                       //and also the place of that element
+
+				
+
+			}
+
+			continue;
+
+			
+
+		}
+
+	}
+
+	int t;
+
+	for(int k=0;k<n;k++){              //This code tests for same elements to be in odd number
+
+		if(flag[k]%2!=0){              //The position of that element is stored in t
+
+		    t=k;	
+
+		}
+
+	}
+
+	return arr[t];                     // t eth element of array is printed   
+
+}
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Learnings:
+-----------
+1. Hard questions are just hard on basics
+
+2. passing array 
+
+3. using flag array
+-----------------------------------------------------------------------------------------------------------------------------------------------
