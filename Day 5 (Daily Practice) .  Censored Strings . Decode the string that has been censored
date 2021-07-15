@@ -1,0 +1,48 @@
+Day 5 (Daily Practice)
+------------------------------------------------------------------
+Question
+---------------------------------------------------------------------------------------
+C*ns*r*d Str*ngs
+Someone has attempted to censor my strings by replacing every vowel with a *, l*k* th*s. Luckily, I've been able to find the vowels that were removed.
+
+Given a censored string and a string of the censored vowels, return the original uncensored string.
+
+Example
+uncensor("Wh*r* d*d my v*w*ls g*?", "eeioeo") ? "Where did my vowels go?"
+
+uncensor("abcd", "") ? "abcd"
+
+uncensor("*PP*RC*S*", "UEAE") ? "UPPERCASE"
+Notes
+The vowels are given in the correct order.
+The number of vowels will match the number of * characters in the censored string.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Solution:
+-------------
+#include<iostream>
+using namespace std;
+
+string unsensor(string p,string q);
+
+int main(){
+	cout<<unsensor("H* My N*m* *s b*s*t ","iaeiai");
+}
+string unsensor(string p,string q){
+    char a='*';
+	for(int i=0;q[i]!='\0';i++){
+		for(int j=0;p[j]!='\0';j++){
+		if(p[j]==a){
+			p[j]=q[i];
+			break;
+	         }
+		}
+	}
+	return p;	
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Learnings:
+1. how to set for loops for transversing in a string.
+2. Combination of for loops according to logic and use of break.
+3. using array concept in strings
+4. Using return type as string in a function
+-------------------------------------------------------------------------------------------------------------------------------------------------------
