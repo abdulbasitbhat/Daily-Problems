@@ -1,0 +1,65 @@
+Day 4 (Daily Problem)
+-------------------------------------------------
+Question
+----------
+Burrrrrrrp
+Create a function that returns the string "Burp" with the amount of "r's" determined by the input parameters of the function.
+
+Examples
+longBurp(3) ? "Burrrp"
+
+longBurp(5) ? "Burrrrrp"
+
+longBurp(9) ? "Burrrrrrrrrp"
+Notes
+Expect num to always be >= 1.
+Remember to use a capital "B".
+Don't forget to return the result.
+-------------------------------------------------------------------------------------------------------------
+
+Solution
+-----------
+#include<iostream>
+using namespace std;
+
+void longBurp(int p);
+
+int main(){
+	int n;
+	cout<<"Enter the no. of r's: \n";
+	cin>>n;
+	longBurp(n);
+}
+
+void longBurp(int p){
+	cout<<"Bu";
+	for(int i=0;i<p;i++){
+		cout<<"r";
+	}
+	cout<<"p"<<endl;
+}
+---------------------------------------------------------------------------------------------------------------------------
+Learnings
+--------------------
+1.How to use return type when we have to return a string
+   2 ways
+   one as shown
+   other way
+
+string longBurp(int p);
+
+int main(){
+	int n;
+	cout<<"Enter the no. of r's: \n";
+	cin>>n;
+	cout<<longBurp(n);
+}
+string longBurp(int p){
+     	cout<<"Bu";
+	for(int i=0;i<p;i++){
+		cout<<"r";
+	}
+	cout<<"p"<<endl;
+}
+---------------------------------------------------------------------------------------------------------------------------
+
