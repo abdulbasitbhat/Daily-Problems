@@ -1,0 +1,51 @@
+Day_6 (Daily Practice)                                                                                            (16-07-2021)
+-------------------------------------------------------------------------------------------------------
+Question
+------------------------------------------------------------------------------------------------------------------------------------
+Broken Bridge
+--------------
+Create a function which validates whether a bridge is safe to walk on (i.e. has no gaps in it to fall through).
+
+Examples
+isSafeBridge("####") ? true
+
+isSafeBridge("## ####") ? false
+
+isSafeBridge("#") ? true
+Notes
+You can expect the bridge's ends connecting it to its surrounding.
+------------------------------------------------------------------------------------------------------------------------------------------
+Solution:
+-------------
+#include<iostream>
+using namespace std;
+
+void isSafeBridge(string a);
+
+int main(){
+    isSafeBridge("######");     	
+}
+
+void isSafeBridge(string a){
+	char c=' ';
+	int flag=0;
+	for(int i=0;a[i]!='\0';i++){
+		if(a[i]==c){
+			flag=flag+1;
+		}
+		else{
+			
+		}
+	}
+	if(flag==0){
+		cout<<"Bridge is safe\n";
+	}
+	else{
+		cout<<"Bridge is not safe\n";
+	}
+}
+----------------------------------------------------------------------------------------------------------------------------------------------
+Learnings:
+1. while using void return type function we will often use cout in it . If this is thr case the we 
+   dont need to write cout<<func_name(args) in main(). We only need to write func_name(args).
+2. Using void return type functions.   
