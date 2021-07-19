@@ -1,0 +1,129 @@
+Day_8 (Daily Problem)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question
+-----------
+Simulate the Game "Rock, Paper, Scissors"                                              (19-07-2021)
+
+Create a function which simulates the game "rock, paper, scissors". The function takes the input of both players (rock, paper or scissors), first parameter from first player, second from second player. The function returns the result as such:
+
+
+
+"Player 1 wins"
+
+"Player 2 wins"
+
+"TIE" (if both inputs are the same)
+
+The rules of rock, paper, scissors, if not known:
+
+
+
+Both players have to say either "rock", "paper" or "scissors" at the same time.
+
+Rock beats scissors, paper beats rock, scissors beat paper.
+
+Examples
+
+rps("rock", "paper") ? "Player 2 wins"
+
+
+
+rps("paper", "rock") ? "Player 1 wins"
+
+
+
+rps("paper", "scissors") ? "Player 2 wins"
+
+
+
+rps("scissors", "scissors") ? "TIE"
+
+
+
+rps("scissors", "paper") ? "Player 1 wins"
+
+Notes
+
+There are several ways to solve this challenge.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Solution
+----------
+#include<iostream>
+
+using namespace std;
+
+
+
+void rps(string , string);
+
+
+
+int main(){
+
+	rps("scissors","paper");
+
+}
+
+
+
+void rps(string a,string b){
+
+	string x="scissors";
+
+	string y="paper";
+
+	string z="rock";
+
+	if(a==x && b==y){
+
+		cout<<"Player 1 wins";
+
+	}
+
+	else if(a==y && b==x){
+
+		cout<<"Player 2 wins";
+
+	}
+
+	else if(a==x && b==z){
+
+		cout<<"Player 2 wins";
+
+	}
+
+	else if(a==z && b==x){
+
+		cout<<"Player 1 wins";
+
+	}
+
+	else if(a==z && b==y){
+
+		cout<<"Player 2 wins";
+
+	}
+
+	else if(a==y && b==z){
+
+		cout<<"Player 1 wins";
+
+	}
+
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Logic:
+---------
+Since there are 2 players and 3 schices means 6 cases. Identify these cases. Use if elseif loops.
+
+
+
+Learnings:
+
+1.Declaration of function at top does not need variabes to be stated. Just write the data type
+
+  void rps(string , string);
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+
