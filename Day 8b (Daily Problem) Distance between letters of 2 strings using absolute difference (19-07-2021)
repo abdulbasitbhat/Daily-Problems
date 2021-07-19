@@ -1,0 +1,153 @@
+Day_8b (Daily Problem)
+--------------------------------------------------------------------------------------------------------------
+Question:    HARD TYPE                                                     (19-07-2021)
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Letter Distance
+
+Given two words, the letter distance is calculated by taking the absolute value of the difference in character codes and summing up the difference.
+
+
+
+If one word is longer than another, add the difference in lengths towards the score.
+
+
+
+To illustrate:
+
+
+
+letterDistance("house", "fly") = dist("h", "f") + dist("o", "l") + dist("u", "y") + dist(house.length, fly.length)
+
+
+
+= |104 - 102| + |111 - 108| + |117 - 121| + |5 - 3|
+
+= 2 + 3 + 4 + 2
+
+= 11
+
+Examples
+
+letterDistance("sharp", "sharq") ? 1
+
+
+
+letterDistance("abcde", "Abcde") ? 32
+
+
+
+letterDistance("abcde", "bcdef") ? 5
+
+Notes
+
+Always start comparing the two strings from their first letter.
+
+Excess letters are not counted towards distance.
+
+Capital letters are included.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Solution
+-----------------
+#include<iostream>
+
+using namespace std;
+
+
+
+int letterDistance(string , string);
+
+
+
+int main()
+
+{
+
+	cout<<letterDistance("abcde","Abcde");
+
+}
+
+
+
+int letterDistance(string a,string b){
+
+	int x=a.length();
+
+	int y=b.length();
+
+	int n=x>y?y:x;
+
+	int difference=0;
+
+	int difference2=0;
+
+	if(x==y){
+
+	for(int i=0;i<n;i++){
+
+		if((int)a[i]>=(int)b[i]){
+
+	    difference=difference +((int)a[i]-(int)b[i]);
+
+	}
+
+	else if((int)b[i]>(int)a[i]){
+
+	    difference=difference +((int)b[i]-(int)a[i]);	
+
+	}
+
+
+
+	}
+
+		return difference;
+
+}
+
+	else if(x!=y){
+
+			for(int i=0;i<n;i++){
+
+		if((int)a[i]>=(int)b[i]){
+
+	    difference=difference +((int)a[i]-(int)b[i]);
+
+	}
+
+	else if((int)b[i]>(int)a[i]){
+
+	    difference=difference +((int)b[i]-(int)a[i]);	
+
+	}
+
+	}
+
+	if(x>y){
+
+		difference2=difference + (x-y);
+
+	}
+
+	else{
+
+		difference2=difference + (y-x);
+
+	}
+
+	return difference2;
+
+	}
+
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Learnings:
+-----------------
+1.Using a lot of loops
+
+2.typecasting to convert character to ascii
+
+3.getting absolute difference using if elseif
+
+4.using ternary operator  ? :
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
