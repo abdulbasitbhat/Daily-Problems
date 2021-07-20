@@ -1,0 +1,70 @@
+Day_9 (Daily Problem)
+--------------------------------------------------------------------------------------
+
+Question
+------------
+Doubled Pay                                                                        (20-07-2021)
+
+An employee working at a very bizzare company, earns one penny on their first day. However, for every day that passes, their base amount doubles, so they earn two pennies on the second day and four pennies on the third day (totalling 7 pennies). Given a number of days, return how many pennies the employee accumulates.
+
+
+
+Examples
+
+doubledPay(1) ? 1
+
+
+
+doubledPay(2) ? 3
+
+
+
+doubledPay(3) ? 7
+
+Notes
+
+You will only get tests for valid positive integers.
+-----------------------------------------------------------------------------------------------------
+Solution
+----------
+#include<iostream>
+
+using namespace std;
+
+
+
+
+
+int doublePay(int);
+
+
+
+int main(){
+
+	cout<<doublePay(4);
+
+}
+
+
+
+int doublePay(int a){
+
+	int ammount=1;
+
+	int sum=1;
+
+	for(int i=0;i<a;i++){
+
+		ammount=2*i;
+
+		sum=sum+ammount;
+
+	}
+
+	return sum;
+
+}
+---------------------------------------------------------------------------------------------------------------------------------------------
+Learnings:
+
+1.Logic of for loop here.
